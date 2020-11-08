@@ -1,9 +1,13 @@
-// Created by cgo -godefs - DO NOT EDIT
+// This file was once created using cgo:
 // cgo -godefs -- -DUNICODE syscalls.go
+// The tool has meanwhile been renamed to
+// go tool cgo -godefs syscalls.go
+// but I can't get it to work, so I just edit it manually
 
 package termbox
 
 const (
+	// for these consts see https://docs.microsoft.com/en-us/windows/console/setconsolemode
 	foreground_blue          = 0x1
 	foreground_green         = 0x2
 	foreground_red           = 0x4
@@ -20,6 +24,7 @@ const (
 	enable_window_input      = 0x8
 	enable_mouse_input       = 0x10
 	enable_extended_flags    = 0x80
+	enable_virtual_terminal_processing = 0x4 
 
 	vk_f1          = 0x70
 	vk_f2          = 0x71
