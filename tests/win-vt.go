@@ -45,6 +45,17 @@ func draw_256ramp() {
 	}
 }
 
+func draw_rgb_cube() {
+	var r, g, b int
+	b = 100
+	for r = 0; r <= 255; r += 10 {
+		fmt.Print("\033[0m\n")
+		for g = 0; g <= 255; g += 5 {
+			fmt.Printf("\033[48;2;%d;%d;%dm ", r, g, b)
+		}
+	}
+}
+
 func clearColor() {
 	fmt.Print("\033[0m")
 }
@@ -56,6 +67,7 @@ func main() {
 		fmt.Println("\033[38;5;220mYellow")
 		fmt.Println("\033[38;2;255;0;0mRed")
 		draw_256ramp()
+		draw_rgb_cube()
 	} else {
 		fmt.Println("error:")
 		fmt.Println(err)
